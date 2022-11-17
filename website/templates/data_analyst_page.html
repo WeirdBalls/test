@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Analytics</title>
+
+    {% include 'links.html' %}
+</head>
+<body>
+{% include 'navbar.html' %}
+<br><br><br><br><br><br>
+<blockquote class="blockquote text-center">
+    <h1 class="align-self-xl-center">Data Analytics</h1>
+</blockquote>
+
+
+<ul class="nav nav-tabs">
+    <li class="active">
+        <button type="button" class="btn btn-info" data-toggle="tab" href="#customer-orders">Customer Orders</button>
+    </li>
+    <li>
+        <button type="button" class="btn btn-info" data-toggle="tab" href="#logs">Logs</button>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div id="customer-orders" class="tab-pane fade in active">
+        <h3>Customer Orders</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Order</th>
+                <th scope="col">Order Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in order_big_arr %}
+                <tr>
+                    {% for k in i %}
+                        <td>{{ k }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="logs" class="tab-pane fade">
+        <h3>Login Logs</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date</th>
+                <th scope="col">Login Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in log_big_arr %}
+                <tr>
+                    {% for k in i %}
+                        <td>{{ k }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+</html>
+
